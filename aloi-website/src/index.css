@@ -66,6 +66,7 @@ nav ul {
 .home-header {
   margin: 0 auto;
   padding: 1.0em;
+  font-size: 48px;
 }
 
 .cards-container {
@@ -81,6 +82,23 @@ nav ul {
   font-size: 20px;
 
   padding-bottom: 3.0em;
+}
+
+.awssld__next:hover {
+  cursor: default;
+}
+
+.awssld__prev:hover {
+  cursor: default;
+}
+
+.awssld__timer {
+  visibility: hidden;
+}
+
+.slideshow {
+  height: 500px;
+  width: 100%;
 }
 
 /* banner */
@@ -134,6 +152,7 @@ nav ul {
   transition-duration: 0.5s;
   cursor: pointer;
 }
+
 
 .cards-body {
   margin: 5% 10% 5% 10%;
