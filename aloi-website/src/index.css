@@ -66,7 +66,8 @@ nav ul {
 .home-header {
   margin: 0 auto;
   padding: 1.0em;
-  font-size: 48px;
+  font-size: 62px;
+  padding-bottom: 0.5em;
 }
 
 .cards-container {
@@ -75,7 +76,6 @@ nav ul {
 
 .short-bio {
   padding-left: 30%;
-  padding-right: 30%;
   padding-top: 3.0em;
   letter-spacing: .2px;
   line-height: 1.5em;
@@ -83,6 +83,11 @@ nav ul {
 
   padding-bottom: 3.0em;
 }
+
+.awssld__content > img:hover {
+  cursor: pointer;
+}
+
 
 .awssld__next:hover {
   cursor: default;
@@ -98,7 +103,41 @@ nav ul {
 
 .slideshow {
   height: 500px;
-  width: 100%;
+}
+
+.slide {
+  margin-top: 3.0em;
+  width: 500px;
+
+  background-color: #EAEAEA;
+  margin-bottom: 2.5em; 
+  padding: 1.0em;
+
+  box-shadow: 2px 5px 5px darkgray;
+}
+
+.slide:hover {
+  transform: scale(1.05); 
+  transition-duration: 0.5s;
+}
+
+.bio-slide-container {
+  display: grid;
+  column-gap: 10%;
+
+  transition: all .2s ease-in-out; 
+  transition-duration: 0.4s;
+}
+
+#item1 {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+#item2 {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  margin-right: 300px;
 }
 
 /* banner */
