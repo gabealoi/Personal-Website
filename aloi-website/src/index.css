@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+/* app.js css */
+#spinner {
+  text-align: center;
+  margin-top: 15%;
+}
+/*  */
 
 /* non-default styling */
 
@@ -38,8 +44,8 @@ nav ul a {
   padding: 1.0em;
   letter-spacing: 0.2em;
 
-  padding-top: 1.6666667em;
-  padding-bottom: 1.6666667em;
+  padding-top: 26%;
+  padding-bottom: 26%;
 }
 
 nav ul a:hover {
@@ -114,6 +120,13 @@ nav ul {
   padding: 1.0em;
 
   box-shadow: 2px 5px 5px darkgray;
+}
+
+figcaption {
+  text-align: center;
+  font-size: small;
+  color: #808080;
+  font-style: italic;
 }
 
 .slide:hover {
@@ -194,7 +207,7 @@ nav ul {
 
 
 .cards-body {
-  margin: 5% 10% 5% 10%;
+  margin: 5%;
   padding: 2% 10% 2% 10%;
   border: solid 2px lightgray;
   background-color: #EAEAEA;

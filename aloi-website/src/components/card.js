@@ -4,10 +4,10 @@ const InfoPanel = (props) => {
     
     return (
 
-        <Card style={{ width: '18rem' }} 
+        <Card style={{ width: '22rem' }} 
         bg={"light"}
         >
-        <a href={props.btnLink} target='_blank'><Card.Img variant="top" src={props.imgname} width={250} height={250}/></a>
+        <a href={props.btnLink} target='_blank'><Card.Img variant="top" src={props.imgname} width={300} height={300}/></a>
         <Card.Body>
             <Card.Title>{props.title}</Card.Title>
             <Card.Text>
