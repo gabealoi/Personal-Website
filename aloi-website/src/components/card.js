@@ -1,20 +1,24 @@
 import { Card, Button } from 'react-bootstrap'
 
-const InfoPanel = () => {
+const InfoPanel = (props) => {
+    
     return (
+
         <Card style={{ width: '18rem' }} 
-        bg={"secondary"}
+        bg={"light"}
         >
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <a href={props.btnLink} target='_blank'><Card.Img variant="top" src={props.imgname} width={250} height={250}/></a>
         <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{props.title}</Card.Title>
             <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
+                <p>{props.body}</p>
+                <br></br>
+                <p>{props.footer}</p>
             </Card.Text>
-            <Button variant="dark">Go somewhere</Button>
+            <Button variant="primary" href={props.btnLink} target='_blank'>See References</Button>
         </Card.Body>
         </Card>
+        
     )
 }
 
