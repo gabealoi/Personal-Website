@@ -23,11 +23,11 @@ export default class Navbar extends Component {
                 <nav>
                     <ul>
                         <li>
-                            <Link style={ this.state.active === 'Home' ? {'background-color': '#ffffff', color: '#000080'} : {}} onClick={this._handleClick} to='/'>Home</Link>
+                            <Link style={ this.state.active === 'Home' ? {'background-color': 'rgba(255, 250, 250, 0.75)', color: '#3d5a80'} : {}} onClick={this._handleClick} to='/'>Home</Link>
                         </li>
 
                         <li>
-                            <Link style={ this.state.active === 'About' ? {'background-color': '#ffffff', color: '#000080'} : {}} onClick={this._handleClick} to='/profile'>About</Link>
+                            <Link style={ this.state.active === 'About' ? {'background-color': 'rgba(255, 250, 250, 0.75)', color: '#3d5a80'} : {}} onClick={this._handleClick} to='/profile'>About</Link>
                         </li>       
                     </ul>
                 </nav>

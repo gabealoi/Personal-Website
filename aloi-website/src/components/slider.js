@@ -21,7 +21,7 @@ const Slider = () => {
     >
       
 
-      <div data-src={arms_wide}/>
+      <div data-src={arms_wide} />
       <div data-src={climbing} />
       <div data-src={umbrella} />
       <div data-src={mountains} />

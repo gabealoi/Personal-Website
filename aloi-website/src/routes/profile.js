@@ -29,11 +29,12 @@ const Profile = () => {
 
                     <section class="prof-info">
 
+                    <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
                         <figure class="pp-holder">
-                            <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
                                 <img src={profile_pic}></img>
-                            </Suspense>
                         </figure>
+                    </Suspense>
+
                         
                         <section class="contact-info">
                             <ol>

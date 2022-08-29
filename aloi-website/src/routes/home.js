@@ -16,23 +16,33 @@ const Home = () => {
                 <h1 class="home-header">Welcome to Me!</h1>
 
                 <div class="bio-slide-container">
-                    <article class="short-bio" id="item1">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi bibendum neque egestas. Phasellus faucibus scelerisque eleifend donec pretium. Integer quis auctor elit sed vulputate mi. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing. Metus dictum at tempor commodo. Ut lectus arcu bibendum at varius vel. Arcu odio ut sem nulla pharetra diam sit amet. Sed egestas egestas fringilla phasellus. Convallis posuere morbi leo urna molestie at elementum. A arcu cursus vitae congue mauris rhoncus aenean vel. Luctus venenatis lectus magna fringilla urna. Curabitur vitae nunc sed velit. Proin libero nunc consequat interdum varius sit. In fermentum posuere urna nec tincidunt praesent semper.
-                        Leo a diam sollicitudin tempor id. Dapibus ultrices in iaculis nunc sed augue. Dui nunc mattis enim ut. Lobortis feugiat vivamus at augue eget arcu dictum varius duis. Aliquam faucibus purus in massa tempor nec feugiat nisl. Nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc. Purus in mollis nunc sed id semper risus. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Enim nulla aliquet porttitor lacus luctus accumsan tortor.
-                    </article>
+                    <div class="welcome-container">
+                        <article class="short-bio" id="item1">
+                            Hello all, my name is Gabe Aloi! 
+                            I am a <span class="emphasis">Computer Science</span> undergrad from Indiana University
+                            in Bloomington who is interested in <span class="emphasis">Full-Stack</span> and <span class="emphasis">Front-end</span> development
+                        </article>
+                    </div>
 
-                    <figure class="slide" id="item2">
-                        <a href="./profile">
-                            <Slider></Slider>
-                        </a>
-                        <figcaption>Take a look at some of my travel pictures</figcaption>
-                    </figure>
+                    <div class="slide-container">
+                        <figure class="slide" id="item2">
+                            <a href="./profile">
+                                <Slider></Slider>
+                            </a>
+                            <figcaption>Take a look at some of my travel pictures</figcaption>
+                        </figure>
+                    </div>
+
                 </div>
+
+                <section class="bio-footer">
+                    If you want to learn more about me, check out the <a href="/profile">About</a> page. Interested in my coding experience and portfolio? <a href="#spacer">Scroll down</a>!
+                </section>
 
                 <div class="banner">
 
                     <div class="arr-container">
-                        <a href="#portfolio" class="down">
+                        <a href="#spacer" class="down">
                             <i className="down-arrow">
                                 <FontAwesomeIcon icon={faChevronDown} />
                             </i>
@@ -40,6 +50,8 @@ const Home = () => {
                     </div>
 
                 </div>
+
+                <div id="spacer"></div>
 
                 <div class="cards-body" id="portfolio">
                     <h2>Experience and Code</h2>
