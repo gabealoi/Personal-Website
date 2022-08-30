@@ -27,7 +27,7 @@ class TimeComponent extends Component {
         let currText = questions[this.state.textIdx % questions.length];
 
         return(
-        <h1> { 
+        <h1 class="moving-text"> { 
             
             <TextTransition
                 text = {currText }

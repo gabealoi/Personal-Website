@@ -5,6 +5,30 @@ import {BrowserRouter} from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+// firebase imports and setup
+import {initializeApp} from 'firebase/app';
+import { getAnalytics } from "firebase/analytics";
+
+// define firebaseConfig
+const firebaseConfig = {
+  apiKey: "AIzaSyBBOUvDpvXmc6ZhbnBX6S9Ixdhe4OMGk9Y",
+  authDomain: "personal-webpage-9f5ab.firebaseapp.com",
+  projectId: "personal-webpage-9f5ab",
+  storageBucket: "personal-webpage-9f5ab.appspot.com",
+  messagingSenderId: "450343653561",
+  appId: "1:450343653561:web:c430026a0add22ac440b68",
+  measurementId: "G-MNF1F40WND"
+};
+
+// intialize firebaseConfig
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+// 
+
+
+// react-router structure
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -13,6 +37,7 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
+// 
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

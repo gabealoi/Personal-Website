@@ -2,13 +2,12 @@
   --calm-blue: #3d5a80;
   --light-blue: #98c1d9;
   --bright-blue: #e0fbfc;
-  --dark-coral: #ee6c4d;
   --navy: #293241;
+  --dark-coral: #ee6c4d;
   --bg-color: rgba(105, 127, 142, 0.2);
 }
 
 * {
-  /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
   font-family: 'Nunito', sans-serif;
   letter-spacing: 1.25px;
 }
@@ -45,13 +44,13 @@ code {
 nav {
   width: 100%;
   padding: 0 1.0em 0 1.0em;
+  display: flex;
+  justify-content: space-around !important;
 }
 
 .top-bar-nav {
   background-color: var(--calm-blue);
-  padding-top: 1.5vw;
-  padding-bottom: 0.5vw;
-
+  padding-bottom: 1vw;
   position: fixed;
   top: 0;
 
@@ -60,28 +59,23 @@ nav {
   z-index: 999999999;
 }
 
-nav ul li {
-  list-style: none;
-}
-
-nav ul a {
+nav a {
   text-decoration: none;
   color: rgba(255, 250, 250, 0.75);
   font-size: 4.0vmin;
   letter-spacing: 0.1em;
-  padding: 1vw;
+  padding: 1vw 1vw 0 1vw;
+  border-bottom: 3px solid transparent;
 }
 
-nav ul a:hover {
-  transition: background-color .3s ease-in;
-  transition: color .2s ease-in;
-  background-color: rgba(255, 250, 250, 0.75);
-  color: var(--calm-blue);
+nav a:hover {
+  transition: border .25s ease-in-out;
+  border-bottom: 3px solid rgba(255, 250, 250, 0.75);
+  color: rgba(255, 250, 250, 0.75);
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-around;
+nav a.active {
+  border-bottom: 3px solid rgba(255, 250, 250, 0.75);
 }
 
 
@@ -96,6 +90,7 @@ nav ul {
   padding-top: 2%;
   margin-bottom: 2%;
   font-size: 62px;
+  font-weight: bolder;
 }
 
 .cards-container {
@@ -111,7 +106,7 @@ nav ul {
 }
 
 .bio-footer {
-  margin-left: 10%;
+  margin: 2.0vh 5.0vh 10.0vh 10%;
 }
 
 .bio-footer a {
@@ -126,9 +121,9 @@ nav ul {
 }
 
 .emphasis {
-  font-weight: bold;
-  font-style: italic;
-  color: var(--dark-coral);
+  font-weight: bold !important;
+  font-style: italic !important;
+  color: var(--dark-coral) !important;
 }
 
 .welcome-container {
@@ -191,6 +186,7 @@ figcaption {
   transition-duration: 0.5s;
 }
 
+
 .bio-slide-container {
   display: flex;
 
@@ -203,6 +199,7 @@ figcaption {
 .banner {
   margin-top: 2%;
   width: 100%;
+  height: 10vh;
   color: var(--calm-blue);
   background-color: var(--calm-blue);
 }
@@ -287,6 +284,14 @@ figcaption {
 .card-text {
   color: var(--navy);
 }
+
+.card {
+  margin: 1.0em;
+}
+
+.bg-light a {
+  border-radius: 25px;
+}
 /*  */
 
 
@@ -296,6 +301,8 @@ figcaption {
 
 .cards-container div {
   border-radius: 25px;
+
+  /* background-color: red; */
 }
 
 .cards-body {
@@ -343,6 +350,7 @@ figcaption {
   display: flex;
   justify-content: space-evenly;
 
+  color: var(--navy);
   font-size: 30px;
 }
 

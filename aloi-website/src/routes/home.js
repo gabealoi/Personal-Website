@@ -1,12 +1,15 @@
 import Panel from "../components/card";
-import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import {faChevronDown, faHelicopterSymbol} from '@fortawesome/free-solid-svg-icons';
 import {faPython, faJava, faHtml5, faCss3, faReact, faAngular, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from '../components/slider';
 
 
-
 const Home = () => {
+    // function to handle the nav to prof from home.js links
+    // function _handleClick(e) {
+    //     // <currPage pathname={window.location.pathname}/>
+    // }
 
     return (
         <div class="home-page">
@@ -17,15 +20,17 @@ const Home = () => {
 
                 <div class="bio-slide-container">
                     <div class="welcome-container">
-                        <article class="short-bio" id="item1">
-                            Hello all, my name is Gabe Aloi! 
-                            I am a <span class="emphasis">Computer Science</span> undergrad from Indiana University
-                            in Bloomington who is interested in <span class="emphasis">Full-Stack</span> and <span class="emphasis">Front-end</span> development
+                        <article class="short-bio">
+                            <p>
+                                Hello all, my name is Gabe Aloi!
+                                I am a <span class="emphasis">Computer Science</span> undergrad from Indiana University
+                                in Bloomington who is interested in <span class="emphasis">Full-Stack</span> and <span class="emphasis">Front-end</span> development
+                            </p>
                         </article>
                     </div>
 
                     <div class="slide-container">
-                        <figure class="slide" id="item2">
+                        <figure class="slide">
                             <a href="./profile">
                                 <Slider></Slider>
                             </a>
@@ -43,9 +48,6 @@ const Home = () => {
 
                     <div class="arr-container">
                         <a href="#spacer" class="down">
-                            <i className="down-arrow">
-                                <FontAwesomeIcon icon={faChevronDown} />
-                            </i>
                         </a>
                     </div>
 

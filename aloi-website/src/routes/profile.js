@@ -53,7 +53,11 @@ const Profile = () => {
                     </section>
 
                     <article class="prof-bio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi bibendum neque egestas. Phasellus faucibus scelerisque eleifend donec pretium. Integer quis auctor elit sed vulputate mi. Faucibus interdum posuere lorem ipsum dolor sit amet consectetur adipiscing. Metus dictum at tempor commodo. Ut lectus arcu bibendum at varius vel. Arcu odio ut sem nulla pharetra diam sit amet. Sed egestas egestas fringilla phasellus. Convallis posuere morbi leo urna molestie at elementum. A arcu cursus vitae congue mauris rhoncus aenean vel. Luctus venenatis lectus magna fringilla urna. Curabitur vitae nunc sed velit. Proin libero nunc consequat interdum varius sit. In fermentum posuere urna nec tincidunt praesent semper.
+                        I started this page out to create some portfolio work for myself. As a <span class="emphasis">prospective Software Engineer</span>, I want to exemplify some of my schools through a few projects
+                        that I can open source. Of course, there is always more to do and more to add and I thoroughly <span class="emphasis">enjoy learning the nuances of new stacks</span> along the way. More specifically, 
+                        I love working within the <span class="emphasis">front-end</span> of app development. I do like dabbling within the back&#8211;end and doing my part in keeping APIs up&#8211;to&#8211;date and functional, but the front&#8211;end has my heart! 
+                        In the context of a company, I am looking for a good company culture that can <span class="emphasis">cultivate my growth&#8211;mindset</span> and propel me further into my interests and bring about new ones while challenging me as an engineer.
+                        If you scroll down you can see an inset PDF of my Resume below in addition to a download option for closer inspection. All of the ways to contact me are listed next to my profile image. 
                     </article>
 
                 </div>
