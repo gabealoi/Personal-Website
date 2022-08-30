@@ -9,7 +9,6 @@ import reportWebVitals from './reportWebVitals';
 
 // firebase imports and setup
 import {initializeApp} from 'firebase/app';
-import { getAnalytics } from "firebase/analytics";
 
 // define firebaseConfig
 const firebaseConfig = {
@@ -24,7 +23,6 @@ const firebaseConfig = {
 
 // intialize firebaseConfig
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 // 
 
 
