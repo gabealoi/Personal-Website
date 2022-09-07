@@ -1,0 +1,192 @@
+:root {
+    --calm-blue: #3d5a80;
+    --light-blue: #98c1d9;
+    --bright-blue: #e0fbfc;
+    --dark-coral: #ee6c4d;
+    --navy: #293241;
+    --bg-color: rgba(105, 127, 142, 0.2);
+}
+  
+* {
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 1.25px;
+}
+
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+
+
+.profile-page {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--bg-color);
+}
+
+/* profile top section */
+.prof-container {
+    display: flex;
+    justify-content: space-between;
+
+    border: solid 2px rgba(61, 90, 128, .15);
+    background-color: rgba(61, 90, 128, .10);
+
+    margin: 1.0em;
+}
+
+.prof-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 3.0em;
+    margin-left: 3.0em;
+}
+
+.prof-bio {
+    margin-top: 3%;
+    margin-right: 3.0em;
+    margin-bottom: 3%;
+
+    padding-left: 10%;
+    padding-right: 10%;
+
+    letter-spacing: .2px;
+    line-height: 1.75em;
+    font-size: 3vmin;
+
+    color: var(--navy);
+}
+
+.pp-holder img {
+    width: 40vmin;
+    height: 40vmin;
+
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 1% 1%;
+
+    border-left: solid 8px var(--calm-blue);
+    border-bottom: solid 4px var(--calm-blue);
+
+    border-top: solid 4px var(--calm-blue);
+}
+
+#img-spinner {
+    text-align: center;
+}
+
+.profile-body h1 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    padding-top: 1.0em;
+    font-size: 6.5vmin;
+
+    padding-bottom: 1.0em;
+    color: var(--navy);
+}
+
+.prof-banner {
+    width: 100%;
+    height: 5vmin;
+
+    background-color: var(--calm-blue);
+}
+
+.contact-info {
+
+    border: solid 2px rgba(61, 90, 128, .25);
+    background-color: rgba(61, 90, 128, .2);
+    border-radius: 20px;
+
+    margin-bottom: 1.0em;
+    padding-top: 1.5vmin;
+    padding-right: 1vmin;
+}
+
+.contact-info ol {
+    list-style: none;
+}
+
+.contact-info ol li {
+    font-size: 2.5vmin;
+    font-weight: bold;
+}
+
+.contact-info ol a {
+    text-decoration: none;
+    color: var(--dark-coral);
+}
+
+.contact-info ol a:hover {
+    text-decoration: underline;
+    color: var(--calm-blue);
+}
+
+/* time component overrides */
+.moving-text {
+    color: var(--navy) !important;
+    padding-bottom: 1.5vh !important;
+}
+/*  */
+
+
+/* pdf/resume stuff */
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 1%;
+    border: solid 2px rgba(61, 90, 128, .15);
+    background-color: rgba(61, 90, 128, .10);
+}
+
+.pdf-obj {
+    margin-top: 2%;
+    margin-bottom: 5%;
+
+    display: block;
+    width: 40%;
+
+}
+
+.react-pdf__Page__canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.react-pdf__Page__textContent {
+    display: none;
+}
+
+.resume-header {
+    display: flex;
+    margin-top: 2%;
+    text-align: center;
+    color: var(--navy);
+}
+
+.resume-header a {
+    color: var(--dark-coral);
+    font-size: 30px;
+}
+
+.resume-header a:hover {
+    color: var(--calm-blue);
+}

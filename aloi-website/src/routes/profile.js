@@ -1,12 +1,93 @@
-
+import { Suspense } from 'react';
+import '../resources/profile.css'
+import profile_pic from '../images/pp.jpg'
+import TimeComponent from '../components/TimeComponent'
+import {faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {faMailBulk, faFileDownload } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SpinnerDiamond} from 'spinners-react';
+import SinglePagePDFViewer from '../components/pdf/single-page';
+import resumePDF from '../resources/Resume.pdf';
 
 
 const Profile = () => {
+    
+
     return (
-        <div>
-            Profile Page
+        <div class="profile-page">
+
+            <div class="profile-body">
+            
+            <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
+                <TimeComponent />
+            </Suspense>
+
+                <div class="prof-banner"></div>
+
+                <div class="prof-container">
+
+
+                    <section class="prof-info">
+
+                    <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
+                        <figure class="pp-holder">
+                                <img src={profile_pic}></img>
+                        </figure>
+                    </Suspense>
+
+                        
+                        <section class="contact-info">
+                            <ol>
+                                <a href="mailto: gabe.n.aloi@gmail.com">
+                                    <li><FontAwesomeIcon icon={faMailBulk}/>: gabe.n.aloi@gmail.com</li>
+                                </a>
+                                <a href="https://www.linkedin.com/in/gabriel-aloi-1a9550202/">
+                                    <li><FontAwesomeIcon icon={faLinkedin}/>: Gabe&#39;s linkedin</li>
+                                </a>
+                                <a href="https://github.com/gabealoi?tab=repositories">
+                                    <li><FontAwesomeIcon icon={faGithub}/>: Gabe&#39; Repositories</li>
+                                </a>
+                            </ol>
+                        </section>
+
+                    </section>
+
+                    <article class="prof-bio">
+                        I started this page out to create some portfolio work for myself. As a <span class="emphasis">prospective Software Engineer</span>, I want to exemplify some of my schools through a few projects
+                        that I can open source. Of course, there is always more to do and more to add and I thoroughly <span class="emphasis">enjoy learning the nuances of new stacks</span> along the way. More specifically, 
+                        I love working within the <span class="emphasis">front-end</span> of app development. I do like dabbling within the back&#8211;end and doing my part in keeping APIs up&#8211;to&#8211;date and functional, but the front&#8211;end has my heart! 
+                        In the context of a company, I am looking for a good company culture that can <span class="emphasis">cultivate my growth&#8211;mindset</span> and propel me further into my interests and bring about new ones while challenging me as an engineer.
+                        If you scroll down you can see an inset PDF of my Resume below in addition to a download option for closer inspection. All of the ways to contact me are listed next to my profile image. 
+                    </article>
+
+                </div>
+
+                <div class="prof-banner"></div>
+
+
+                <div class="pdf-container">
+                    
+                        
+                        <section class="resume-header">
+                            <h2 id='resume-header'>My Resume</h2>
+                            
+                            <a id="resume-download" href="/resume/Resume.pdf" download={"GabeAloi_Resume.pdf"}>
+                                <FontAwesomeIcon icon={faFileDownload}/>
+                            </a>
+                        
+                        </section>
+                 
+                    <div class="pdf-obj">
+                        <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
+                            <SinglePagePDFViewer pdf={resumePDF} class="resume-pdf"></SinglePagePDFViewer>
+                        </Suspense>
+                    </div>
+                </div>
+
+            </div> {/* end body div */}
+
         </div>
-    )
+    );
 }
 
 export default Profile;

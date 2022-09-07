@@ -1,8 +1,7 @@
 import { lazy, Suspense } from 'react';
 import {Routes, Route} from 'react-router-dom'
-// import { Home } from './routes/home';
-import { Navbar } from './components/Navbar';
-// import { Profile } from './routes/profile';
+import Navbar from './components/Navbar';
+import {SpinnerCircular} from 'spinners-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = lazy(() => import('./routes/home'));
@@ -15,7 +14,7 @@ function App() {
   <>
       <Navbar />
 
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={ <div id='spinner'><SpinnerCircular color='#000080' size={.075 * window.innerWidth}/></div>}>
         <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='profile' element={<Profile />}></Route>
