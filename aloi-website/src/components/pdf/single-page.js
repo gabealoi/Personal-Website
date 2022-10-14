@@ -3,7 +3,7 @@ import { Document, Page } from "react-pdf";
 
 export default function SinglePage(props) {
   const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1); //setting 1 to show fisrt page
+  const [pageNumber, setPageNumber] = useState(1); //setting 1 to show first page
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -25,6 +25,7 @@ export default function SinglePage(props) {
     changePage(1);
   }
 
+  // set pdf val to = props sent in given the prop sent in will be a linked .pdf
   const { pdf } = props;
 
   
