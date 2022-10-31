@@ -33,7 +33,7 @@ const Home = () => {
 
                     <div class="slide-container">
                         <figure class="slide">
-                            <a href="./profile">
+                            <a href={window.location + "/profile"}>
                                 <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
                                     <Slider></Slider>
                                 </Suspense>
