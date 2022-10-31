@@ -6,10 +6,12 @@ import climbing from '../images/climbing.JPG';
 import umbrella from '../images/umbrellas.jpg';
 import mountains from '../images/moutains.jpg';
 
+
+
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const Slider = () => {
-  
+
   return (
     <AutoplaySlider
       play={true}

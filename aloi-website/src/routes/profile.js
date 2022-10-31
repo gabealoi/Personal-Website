@@ -1,30 +1,46 @@
 import { Suspense, lazy} from 'react';
 import '../resources/profile.css'
 import profile_pic from '../images/pp.jpg'
-import TimeComponent from '../components/TimeComponent'
+// import TimeComponent from '../components/TimeComponent'
 import {faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import {faMailBulk, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SpinnerDiamond} from 'spinners-react';
-import SinglePagePDFViewer from '../components/pdf/single-page';
+// import SinglePagePDFViewer from '../components/pdf/single-page';
 import resumePDF from '../resources/Resume.pdf';
 
-// firebase imports
-import { storage } from '../lib/init-firebase';
-import { ref, getDownloadURL } from 'firebase/storage'; 
+// // firebase imports
+// import { storage } from '../lib/init-firebase';
+// import { ref, getDownloadURL } from 'firebase/storage'; 
+
+// lazy loads
+const TimeComponent = lazy(() => import('../components/TimeComponent'));
+const SinglePagePDFViewer = lazy(() => import('../components/pdf/single-page'));
 
 const Profile = () => {
 
-    getDownloadURL(ref(storage, 'pp.jpg')).then((url) => {        
-        // insert into an <img> element
-        const img = document.getElementById('profile-img');
-        img.setAttribute('src', url);
-    })
-    .catch((error) => {
-        // Handle any errors
-        console.log('ERROR READING IMAGES\n' + error);
-    });
-    
+    // var profile_resources = ['pp.jpg','aloi_Resume.pdf'];
+    // var profile_resources = ['pp.jpg'];
+
+
+    // for (let i=0;i<profile_resources.length;i++) {
+    //     getDownloadURL(ref(storage, profile_resources[i])).then((url) => { 
+    //         if (i===0) {
+    //             // insert into an <img> element
+    //             const img = document.getElementById('profile-img');
+    //             img.setAttribute('src', url);
+    //         } else {
+    //             // insert into <pdf> element
+    //             const pdf = document.getElementById('my-resume');
+    //             console.log(pdf);
+    //             pdf.setAttribute('pdf', url);
+    //         }
+    //     })
+    //     .catch((error) => {
+    //         // Handle any errors
+    //         console.log('ERROR READING IMAGES\n' + error);
+    //     });
+    // }
  
     return (
         <div class="profile-page">
@@ -44,8 +60,8 @@ const Profile = () => {
 
                     <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
                         <figure class="pp-holder">
-                                <img src='' id='profile-img'></img>
-                                {/* <img src={profile_pic} id='myimg'></img> */}
+                                {/* <img src='' id='profile-img'></img> */}
+                                <img src={profile_pic} id='myimg' alt='profile'></img>
                         </figure>
                     </Suspense>
 
@@ -59,7 +75,7 @@ const Profile = () => {
                                     <li><FontAwesomeIcon icon={faLinkedin}/>: Gabe&#39;s linkedin</li>
                                 </a>
                                 <a href="https://github.com/gabealoi?tab=repositories">
-                                    <li><FontAwesomeIcon icon={faGithub}/>: Gabe&#39; Repositories</li>
+                                    <li><FontAwesomeIcon icon={faGithub}/>: Gabe&#39;s Repositories</li>
                                 </a>
                             </ol>
                         </section>
@@ -94,7 +110,8 @@ const Profile = () => {
                  
                     <div class="pdf-obj">
                         <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
-                            <SinglePagePDFViewer pdf={resumePDF} class="resume-pdf"></SinglePagePDFViewer>
+                            <SinglePagePDFViewer pdf={resumePDF} class="resume-pdf" id='my-resume'></SinglePagePDFViewer>
+                            {/* <SinglePagePDFViewer ref={node => componentRef.current = node} pdf='' class="resume-pdf" id='my-resume'></SinglePagePDFViewer> */}
                         </Suspense>
                     </div>
                 </div>
