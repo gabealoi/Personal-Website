@@ -10,13 +10,7 @@ import libIcon from '../images/liberty_thumbnail.png'
 
 
 
-
 const Home = () => {
-    // function to handle the nav to prof from home.js links
-    // function _handleClick(e) {
-    //     // <currPage pathname={window.location.pathname}/>
-    // }
-
     return (
         <div class="home-page">
 

@@ -15,16 +15,28 @@ import { ref, getDownloadURL } from 'firebase/storage';
 
 const Profile = () => {
 
-    getDownloadURL(ref(storage, 'pp.jpg')).then((url) => {        
-        // insert into an <img> element
-        const img = document.getElementById('profile-img');
-        img.setAttribute('src', url);
-    })
-    .catch((error) => {
-        // Handle any errors
-        console.log('ERROR READING IMAGES\n' + error);
-    });
-    
+    // var profile_resources = ['pp.jpg','aloi_Resume.pdf'];
+    var profile_resources = ['pp.jpg'];
+
+
+    for (let i=0;i<profile_resources.length;i++) {
+        getDownloadURL(ref(storage, profile_resources[i])).then((url) => { 
+            if (i===0) {
+                // insert into an <img> element
+                const img = document.getElementById('profile-img');
+                img.setAttribute('src', url);
+            } else {
+                // insert into <pdf> element
+                const pdf = document.getElementById('my-resume');
+                console.log(pdf);
+                pdf.setAttribute('pdf', url);
+            }
+        })
+        .catch((error) => {
+            // Handle any errors
+            console.log('ERROR READING IMAGES\n' + error);
+        });
+    }
  
     return (
         <div class="profile-page">
@@ -59,7 +71,7 @@ const Profile = () => {
                                     <li><FontAwesomeIcon icon={faLinkedin}/>: Gabe&#39;s linkedin</li>
                                 </a>
                                 <a href="https://github.com/gabealoi?tab=repositories">
-                                    <li><FontAwesomeIcon icon={faGithub}/>: Gabe&#39; Repositories</li>
+                                    <li><FontAwesomeIcon icon={faGithub}/>: Gabe&#39;s Repositories</li>
                                 </a>
                             </ol>
                         </section>
@@ -94,7 +106,8 @@ const Profile = () => {
                  
                     <div class="pdf-obj">
                         <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
-                            <SinglePagePDFViewer pdf={resumePDF} class="resume-pdf"></SinglePagePDFViewer>
+                            <SinglePagePDFViewer pdf={resumePDF} class="resume-pdf" id='my-resume'></SinglePagePDFViewer>
+                            {/* <SinglePagePDFViewer ref={node => componentRef.current = node} pdf='' class="resume-pdf" id='my-resume'></SinglePagePDFViewer> */}
                         </Suspense>
                     </div>
                 </div>
