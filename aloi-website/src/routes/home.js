@@ -1,10 +1,7 @@
 import {Suspense, lazy} from 'react';
-// import Panel from "../components/card";
-// import {faChevronDown, faHelicopterSymbol} from '@fortawesome/free-solid-svg-icons';
 import {faPython, faJava, faHtml5, faCss3, faReact, faAngular, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SpinnerDiamond} from 'spinners-react';
-// import Slider from '../components/slider';
 import py from '../images/pylogo.png'
 import tba from '../images/tba.png'
 import rIcon from '../images/react_icon.png'
