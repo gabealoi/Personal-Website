@@ -74,7 +74,7 @@ code {
     width: 40vmin;
     height: 40vmin;
 
-    border-radius: 50%;
+    border-radius: 100%;
     object-fit: cover;
     object-position: 1% 1%;
 
@@ -189,4 +189,54 @@ code {
 
 .resume-header a:hover {
     color: var(--calm-blue);
+}
+
+
+/* Responsive */
+@media (max-width:600px) {
+    .prof-container {
+        flex-direction: column;
+    }
+
+    .prof-header {
+        margin-top: 1em;
+    }
+
+    .profile-pic {
+        margin: 1rem;
+    }
+
+    .prof-info {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .prof-bio {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .right-contact {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        margin-bottom: 2rem;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+        height: fit-content;
+    }
+
+    .contact-info ol {
+        margin: 0.5rem;
+        padding: 0;
+    }
 }

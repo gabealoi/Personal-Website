@@ -91,6 +91,7 @@ nav a.active {
   margin-bottom: 2%;
   font-size: 62px;
   font-weight: bolder;
+  text-align: center;
 }
 
 .cards-container {
@@ -352,6 +353,62 @@ figcaption {
 
   color: var(--navy);
   font-size: 30px;
+}
+
+
+/* Responsive */
+@media (max-width:600px) {
+  .top-section {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bio-slide-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.0rem;
+  }
+
+  .welcome-container {
+    margin: 0;
+    width: 100%;
+  }
+
+  .home-header {
+    font-size: 10vw;
+  }
+
+  /* slideshow modifications */
+  .slide-container {
+    width: 90%;
+  }
+  
+  .bio-footer {
+    margin-bottom: 0;
+  }
+
+  .bio-footer p {
+    font-size: 3vw;
+  }
+
+
+  /* Portfolio Cards */
+  .cards-body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cards-body h2 {
+    font-size: 7vw;
+  }
+
+  /* .card.bg-light {
+    width: 18rem !important;
+  } */
+  
 }
 
 
