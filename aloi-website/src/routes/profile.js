@@ -32,26 +32,26 @@ const Profile = () => {
 
                     <section class="prof-info">
 
-                    <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
-                        <div class="profile-pic">
-                            <figure class="pp-holder">
-                                    <img src={profile_pic} id='myimg' alt='profile'></img>
-                            </figure>
-                        </div>
-                    </Suspense>
+                        <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth}/></div>}>
+                            <div class="profile-pic">
+                                <figure class="pp-holder">
+                                        <img src={profile_pic} id='myimg' alt='profile'></img>
+                                </figure>
+                            </div>
+                        </Suspense>
 
                         
                         <div class="right-contact">
                             <section class="contact-info">
                                 <ol>
                                     <a href="mailto: gabe.n.aloi@gmail.com">
-                                        <li><FontAwesomeIcon icon={faMailBulk}/>: gabe.n.aloi@gmail.com</li>
+                                        <li><FontAwesomeIcon icon={faMailBulk}/><span class="short-contact">: gabe.n.aloi@gmail.com</span></li>
                                     </a>
                                     <a href="https://www.linkedin.com/in/gabriel-aloi-1a9550202/">
-                                        <li><FontAwesomeIcon icon={faLinkedin}/>: Gabe&#39;s linkedin</li>
+                                        <li><FontAwesomeIcon icon={faLinkedin}/><span class="short-contact">: Gabe&#39;s linkedin</span></li>
                                     </a>
                                     <a href="https://github.com/gabealoi?tab=repositories">
-                                        <li><FontAwesomeIcon icon={faGithub}/>: Gabe&#39;s Repositories</li>
+                                        <li><FontAwesomeIcon icon={faGithub}/><span class="short-contact">: Gabe&#39;s Repositories</span></li>
                                     </a>
                                 </ol>
                             </section>

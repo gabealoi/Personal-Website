@@ -203,12 +203,14 @@ code {
     }
 
     .profile-pic {
-        margin: 1rem;
+        margin-top: 1rem;
     }
 
     .prof-info {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 0;
     }
 
@@ -222,21 +224,34 @@ code {
         justify-content: center;
         align-items: flex-end;
 
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .short-contact {
+        display: none;
     }
 
     .contact-info {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        flex-direction: row;
 
         margin: 0;
-        height: fit-content;
     }
 
     .contact-info ol {
         margin: 0.5rem;
         padding: 0;
+    }
+
+    .contact-info ol li {
+        display: inline;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        font-size: larger;
+    }
+
+    /* pdf properties */
+    .pdf-obj {
+        display: none;
     }
 }
