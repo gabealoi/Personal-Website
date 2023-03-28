@@ -17,14 +17,6 @@ const Slider = lazy(() => import('../components/slider'));
 const Panel = lazy(() => import('../components/card'));
 
 
-// !!!NOTE FOR SELF LATER!!!
-/*
-    You gotta fix the way the data loads in as the order of the data being sent in varies, you must organize that to be in parallel with
-    the images you are statically serving (aka the image array)
-*/
-// !!!!!
-
-
 const Home = () => {
     const {loading, data} = useFirestoreCollection('cards');
 
@@ -38,7 +30,10 @@ const Home = () => {
         cardData.push(doc);
         // console.log(doc);
     });
-    
+    // sort by obj key
+    cardData.sort((a, b) => a.key - b.key);
+
+
     const cardImgs = [libIcon, rIcon, py];
     let allCards = [];
 
@@ -50,9 +45,6 @@ const Home = () => {
         this.body = body || 'I am always trying to learn and practice new things that would be posted here';
         this.footer = footer;
         this.btnLink = btnLink;
-        // this.width = window.innerWidth > '2700px' ? '22rem' : '17rem';
-        // this.width = '22rem';
-        // this.width = '300px';
         this.width = window.innerWidth > '2000px' && window.innerWidth < '3000px' ? '22rem' : '300px';
         this.id = 'top-link';
     }
@@ -74,6 +66,7 @@ const Home = () => {
     populateCardInfo();
 
 
+
     let allCardElems = [];
     function generateCards() {
         // generate each card elem inside its own div
@@ -92,7 +85,6 @@ const Home = () => {
     }
 
     generateCards();
-
 
 
     // JSX
