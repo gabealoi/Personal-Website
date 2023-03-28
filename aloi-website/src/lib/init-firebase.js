@@ -2,8 +2,8 @@
 import {initializeApp} from 'firebase/app';
 
 // want the firestore for the storage imports
-// import {getFirestore} from 'firebase/firestore'
-import { getStorage } from 'firebase/storage';
+import {getFirestore} from 'firebase/firestore'
+// import { getStorage } from 'firebase/storage';
 
 // define firebaseConfig
 const firebaseConfig = {
@@ -20,5 +20,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // initialize fireStore, exported to be of use in multiple files within the project scope
-// export const db = getFirestore(app);
-export const storage = getStorage(app);
+export const db = getFirestore(app);
+// export const storage = getStorage(app);

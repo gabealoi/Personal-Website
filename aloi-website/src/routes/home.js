@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { Suspense, lazy, createElement } from 'react';
 import { Link } from 'react-router-dom';
 import { faPython, faJava, faHtml5, faCss3, faReact, faAngular, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,12 +8,86 @@ import tba from '../images/tba.png'
 import rIcon from '../images/react_icon.png'
 import libIcon from '../images/liberty_thumbnail.png'
 
+// import of custom hook for firestore data
+import useFirestoreCollection from '../hooks/useFirestoreCollection';
+// 
 
 // lazy imports
 const Slider = lazy(() => import('../components/slider'));
 const Panel = lazy(() => import('../components/card'));
 
+
 const Home = () => {
+    const {loading, data} = useFirestoreCollection('cards');
+
+    // loading state checked for card data grab
+    if (loading) {
+        return <div><p>Loading Card...</p></div>
+    }
+
+    let cardData = [];
+    data.map((doc) => {
+        cardData.push(doc);
+        // console.log(doc);
+    });
+    // sort by obj key
+    cardData.sort((a, b) => a.key - b.key);
+
+
+    const cardImgs = [libIcon, rIcon, py];
+    let allCards = [];
+
+
+    // cardObj
+    function Card(imgname, title, body, footer, btnLink, id) {
+        this.imgname = imgname || tba;
+        this.title = title || 'New Stuff Coming Soon!';
+        this.body = body || 'I am always trying to learn and practice new things that would be posted here';
+        this.footer = footer;
+        this.btnLink = btnLink;
+        this.width = window.innerWidth > '2000px' && window.innerWidth < '3000px' ? '22rem' : '300px';
+        this.id = 'top-link';
+    }
+    // 
+
+    function populateCardInfo() {  
+        for (let i=0;i<cardData.length;i++) {
+            const newCardInfo = new Card(
+                cardImgs[i],
+                cardData[i].title,
+                cardData[i].body,
+                cardData[i].footer,
+                cardData[i].btnLink
+            );
+            allCards.push(newCardInfo);
+        }
+    }
+
+    populateCardInfo();
+
+
+
+    let allCardElems = [];
+    function generateCards() {
+        // generate each card elem inside its own div
+        for (let i=0;i<allCards.length;i++) {
+            const cardElem = createElement(
+                Panel,
+                allCards[i]
+            );
+            allCardElems.push(
+            <div key={`${i+1}`} class={`item${i+1}`}>
+                <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth} /></div>}>
+                    {cardElem}
+                </Suspense>
+            </div>);
+        }
+    }
+
+    generateCards();
+
+
+    // JSX
     return (
         <div class="home-page">
 
@@ -35,13 +109,11 @@ const Home = () => {
 
                         <div class="slide-container">
                             <figure class="slide">
-                                {/* <a href={window.location.href + "/profile"}> */}
                                 <Link to='/profile'>
                                     <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth} /></div>}>
                                         <Slider></Slider>
                                     </Suspense>
                                 </Link>
-                                {/* </a> */}
                                 <figcaption>Take a look at some of my travel pictures</figcaption>
                             </figure>
                         </div>
@@ -69,72 +141,7 @@ const Home = () => {
                     <small>This one is in the works still :)</small>
 
                     <section class="cards-container">
-
-
-                        <div class="item1">
-                            <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth} /></div>}>
-                                <Panel
-                                    imgname={libIcon}
-                                    title="Liberty Mutual Work Experience"
-                                    body="I joined Liberty's Tech&#8211;Start Internship program the Summer of 2022 where I worked closely with Senior Software Engineers and Developers in maintaining, updating, and creating new systems to enhance their commercial insurance systems. I used Angular to update front-end UIs and connected and tested API endpoints to ensure backend compatibility within legacy code."
-                                    footer="See the link below or click on the card to see more information about my internship program here."
-                                    btnLink="https://jobs.libertymutualgroup.com/careers/undergraduate-internships/technology/">
-                                </Panel>
-                            </Suspense>
-                        </div>
-                        <div class="item2">
-                            <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth} /></div>}>
-                                <Panel
-                                    imgname={rIcon}
-                                    title="React OpenSource"
-                                    body="I started using React at Indiana University and caught on quick, and after some more practice and a few projects later&mdash;like the one you see now!&mdash;I fell in love with the framework. Additionally, I worked in Agile, full&#8211;stack development in the construction of a faux health insurance website at Indiana University."
-                                    footer="Clicking the card or link will bring you to the repo for the code of this website which contains more details about the packages used in the construction."
-                                    btnLink="https://github.com/gabealoi/Personal-Website"
-                                >
-                                </Panel>
-                            </Suspense>
-                        </div>
-                        <div class="item3">
-                            <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth} /></div>}>
-                                <Panel
-                                    imgname={py}
-                                    title="Python Excel Scripting"
-                                    body="This repo is young with an interest in manipulating Excel sheets and workbooks with Python scripts. Practice doing excel operations, modifying cells, and flipping spreadsheets is available here. Also, this interest arose when helping my father to automate doing 'V&#8211;Lookups' and some of the other finances that are managed within his company."
-                                    footer="Looking at the references here will bring you to a small repo with some Python&dash;Excel practice and implementation"
-                                    btnLink="https://github.com/gabealoi/Python-Scripting"
-                                >
-                                </Panel>
-                            </Suspense>
-                        </div>
-
-
-                        <div class="item4">
-                            <Suspense fallback={<div id='img-spinner'><SpinnerDiamond color='#000080' size={.015 * window.innerWidth} /></div>}>
-
-                                <Panel
-                                    imgname={tba}
-                                >
-                                </Panel>
-                            </Suspense>
-                        </div>
-                        <div class="item5">
-                            <Suspense>
-                                <Panel
-                                    imgname={tba}
-                                >
-                                </Panel>
-                            </Suspense>
-                        </div>
-                        <div class="item6">
-                            <Suspense>
-                                <Panel
-                                    imgname={tba}
-                                >
-                                </Panel>
-                            </Suspense>
-                        </div>
-
-
+                        {allCardElems}
                     </section>
 
                     <section class="langs">
